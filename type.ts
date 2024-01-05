@@ -16,7 +16,6 @@ export interface Product {
     name:string,
     price:string,
     isFeatured:boolean,
-    isArchived:boolean,
     size: Size,
     color: Color,
     images: Image[],
