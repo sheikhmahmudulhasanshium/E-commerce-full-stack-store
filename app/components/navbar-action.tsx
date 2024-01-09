@@ -1,10 +1,10 @@
 "use client"
 
 import { ShoppingBag } from "lucide-react";
-import Button from "./ui/button";
 import { useEffect, useState } from "react";
 import useCart from "@/hooks/use-cart";
 import { useRouter } from "next/navigation";
+import Button from "./ui/button";
 
 
 const NavbarActions = () => {
