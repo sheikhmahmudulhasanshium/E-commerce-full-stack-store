@@ -1,6 +1,6 @@
 "use client"
 
-import PreviewModal from "@/app/components/preview-modal";
+import PreviewModal from "@/components/preview-modal";
 import { useEffect, useState } from "react";
 
 const ModalProvider = () => {

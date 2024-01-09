@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import useCart from '@/hooks/use-cart';
 
 import CartItem from './components/cart-item';
-import Container from '@/app/components/ui/container';
+import Container from '@/components/ui/container';
 import Summary from './components/summery';
 
 export const revalidate = 0;
