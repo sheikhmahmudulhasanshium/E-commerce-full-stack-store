@@ -7,6 +7,15 @@ import CartItem from "./components/cart-item";
 import Summery from "./components/summery";
 
 const CartPage = () => {
+    const [isMounted,setIsMounted]=useState(false)
+    useEffect(()=>{
+        setIsMounted(true)
+    },[])
+
+    if(!isMounted){
+        return null
+    }
+
     const cart=useCart()
     return ( 
         <div className="bg-white">

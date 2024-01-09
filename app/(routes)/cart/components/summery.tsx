@@ -32,6 +32,7 @@ const Summery=()=>{
         })
         window.location=response.data.url
     }
+    
     return(
         <div className=" mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
             <h2 className="text-lg font-medium text-gray-950">Order Summmery</h2>
@@ -44,7 +45,7 @@ const Summery=()=>{
 
                 </div>
             </div>
-            <Button className="w-full mt-6" onClick={onCheckOut}>Checkout</Button>
+            <Button disabled={items.length===0} className="w-full mt-6" onClick={onCheckOut}>Checkout</Button>
         </div>
     )
 }
