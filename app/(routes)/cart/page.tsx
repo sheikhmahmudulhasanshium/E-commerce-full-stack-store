@@ -1,29 +1,47 @@
-"use client"
+"use client";
 
-import Container from "@/app/components/ui/container";
-import getProducts from "@/actions/get-products";
-import getBillboard from "@/actions/get-billboards";
-import ProductList from "@/app/components/product-list";
-import Billboard from "@/app/components/ui/billboard";
+import { useEffect, useState } from 'react';
+
+import useCart from '@/hooks/use-cart';
+
+import CartItem from './components/cart-item';
+import Container from '@/app/components/ui/container';
+import Summary from './components/summery';
 
 export const revalidate = 0;
 
-const HomePage = async () => {
-  const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("0e12e5cf-29ab-4529-b8d5-c5371dae1f7b");
+const CartPage = () => {
+  const [isMounted, setIsMounted] = useState(false);
+  const cart = useCart();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
-    <Container>
-      <div className="space-y-10 pb-10">
-        <Billboard 
-          data={billboard}
-        />
-        <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-          <ProductList title="Featured Products" items={products} />
+    <div className="bg-white">
+      <Container>
+        <div className="px-4 py-16 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold text-black">Shopping Cart</h1>
+          <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
+            <div className="lg:col-span-7">
+              {cart.items.length === 0 && <p className="text-neutral-500">No items added to cart.</p>}
+              <ul>
+                {cart.items.map((item) => (
+                  <CartItem key={item.id} data={item} />
+                ))}
+              </ul>
+            </div>
+            <Summary />
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   )
 };
 
-export default HomePage;
+export default CartPage;
