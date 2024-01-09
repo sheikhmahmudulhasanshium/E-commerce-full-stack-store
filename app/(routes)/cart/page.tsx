@@ -8,6 +8,8 @@ import Summery from "./components/summery";
 
 const CartPage = () => {
     const [isMounted,setIsMounted]=useState(false)
+    const cart=useCart()
+
     useEffect(()=>{
         setIsMounted(true)
     },[])
@@ -16,7 +18,6 @@ const CartPage = () => {
         return null
     }
 
-    const cart=useCart()
     return ( 
         <div className="bg-white">
             <Container>
