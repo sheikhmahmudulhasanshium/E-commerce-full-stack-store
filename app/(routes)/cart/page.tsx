@@ -7,6 +7,7 @@ import useCart from '@/hooks/use-cart';
 import CartItem from './components/cart-item';
 import Container from '@/components/ui/container';
 import Summary from './components/summery';
+import Loading from './components/loading';
 
 export const revalidate = 0;
 
@@ -19,7 +20,7 @@ const CartPage = () => {
   }, []);
 
   if (!isMounted) {
-    return null;
+    return <Loading/>;
   }
 
   return (
