@@ -2,7 +2,7 @@
 ![Slide 2: Product View](https://github.com/sheikhmahmudulhasanshium/E-commerce-full-stack-store/blob/main/Snippets/p-2.png)
 ![Slide 3: Product Card](https://github.com/sheikhmahmudulhasanshium/E-commerce-full-stack-store/blob/main/Snippets/p-3.png)
 ![Slide 4: Shopping Cart](https://github.com/sheikhmahmudulhasanshium/E-commerce-full-stack-store/blob/main/Snippets/p-4.png)
-![Slide 5: Payment](/Snippets/p-5.png)
+![Slide 5: Payment](https://github.com/sheikhmahmudulhasanshium/E-commerce-full-stack-store/blob/main//Snippets/p-5.png)
 
 
 
